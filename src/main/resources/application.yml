@@ -1,0 +1,20 @@
+spring:
+  data:
+    mongodb:
+      username: root
+      password: example
+      host: localhost
+      authentication-database: admin
+      database: payment
+
+server:
+  servlet:
+    context-path: /payment
+management:
+  endpoints:
+    web:
+      exposure:
+        include: loggers
+  endpoint:
+    loggers:
+      enabled: true
