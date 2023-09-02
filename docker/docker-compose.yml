@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
 
-  mongo:
+  mongo-actuator:
     image: mongo
     restart: always
     ports:
@@ -11,7 +11,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
 
-  mongo-express:
+  mongo-express-actuator:
     image: mongo-express
     restart: always
     ports:

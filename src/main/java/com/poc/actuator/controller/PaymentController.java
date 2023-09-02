@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/order")
+@RequestMapping("/payment")
 public class PaymentController {
 
     private final PaymentService paymentService;
 
-    @PostMapping
+    @PostMapping("/order")
     @ResponseStatus(HttpStatus.CREATED)
     public void createOrder(@RequestBody PaymentOrderRequest paymentOrderRequest) {
         paymentService.sendPayment(paymentOrderRequest);
