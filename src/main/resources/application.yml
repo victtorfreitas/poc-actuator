@@ -6,11 +6,14 @@ spring:
       host: localhost
       authentication-database: admin
       database: payment
+
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health
   endpoint:
-    loggers:
+    health:
       enabled: true
+      show-components: always
+      show-details: always
