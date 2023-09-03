@@ -10,7 +10,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, info
+        include: health, info, metrics
   info:
     git:
       enabled: true
@@ -20,6 +20,8 @@ management:
     java:
       enabled: true
   endpoint:
+    metrics:
+      enabled: true
     info:
       enabled: true
     health:
