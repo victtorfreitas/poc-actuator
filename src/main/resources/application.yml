@@ -6,14 +6,25 @@ spring:
       host: localhost
       authentication-database: admin
       database: payment
-
 management:
   endpoints:
     web:
       exposure:
-        include: health
+        include: health, info
+  info:
+    git:
+      enabled: true
+      mode: full
+    os:
+      enabled: true
+    java:
+      enabled: true
   endpoint:
+    info:
+      enabled: true
     health:
       enabled: true
       show-components: always
       show-details: always
+server:
+  port: 9000
