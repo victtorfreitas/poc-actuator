@@ -26,6 +26,41 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "All routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/actuator",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"actuator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/actuator/info",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"actuator",
+								"info"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
