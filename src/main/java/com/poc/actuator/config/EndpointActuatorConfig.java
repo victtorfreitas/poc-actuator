@@ -8,8 +8,5 @@ import java.util.LinkedHashMap;
 
 @Component
 public class EndpointActuatorConfig {
-    @Bean
-    public CustomHealthEndPoint customHealthEndPoint(OrderRepository orderRepository) {
-        return new CustomHealthEndPoint(orderRepository, new LinkedHashMap<>());
-    }
+
 }

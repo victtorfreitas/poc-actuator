@@ -13,7 +13,7 @@ public interface OrderRepository extends MongoRepository<OrderEntity, String> {
 
     @Query("{'date': {'$gte': ISODate('?0')}}")
     List<OrderEntity> findAllByDate(String today);
-    List<OrderEntity> findAllByDateContainingAndEffectived(String today, boolean isEffective);
+    List<OrderEntity> findAllByDateContainingAndEffected(String today, boolean isEffective);
 
     List<OrderEntity> findAllByRecipientNameContains(String name);
 }
