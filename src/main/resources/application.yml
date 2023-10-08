@@ -10,7 +10,8 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, info, metrics
+        include: health, info, metrics, custom
+  
   info:
     git:
       enabled: true
@@ -20,6 +21,15 @@ management:
     java:
       enabled: true
   endpoint:
+    beans:
+      cache:
+        time-to-live: "10s"
+    caches:
+      enabled: false
+    custom:
+      enabled: true
+      cache:
+        time-to-live: "10s"
     metrics:
       enabled: true
     info:
@@ -30,3 +40,12 @@ management:
       show-details: always
 server:
   port: 9000
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG

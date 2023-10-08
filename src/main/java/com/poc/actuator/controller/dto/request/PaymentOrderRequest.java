@@ -3,11 +3,11 @@ package com.poc.actuator.controller.dto.request;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 public class PaymentOrderRequest {
     private BigDecimal value;
-    private LocalDateTime dateTime;
+    private LocalDate date;
     private String recipientName;
 }
