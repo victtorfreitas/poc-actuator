@@ -1,6 +1,7 @@
 package com.poc.actuator.repository.entity;
 
 import lombok.*;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -18,11 +19,12 @@ public class OrderEntity {
 
     @Id
     @Field("_id")
-    private String id;
+    private ObjectId id;
     private BigDecimal value;
     private String date;
     private String recipientName;
     private boolean effected;
+    private boolean fraud;
 
     public Status getStatus() {
         return this.isEffected() ? Status.PROCESSED : Status.PROCESSING;

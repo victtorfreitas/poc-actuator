@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.poc.actuator.repository.entity.Status;
 import lombok.Builder;
-import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Map;

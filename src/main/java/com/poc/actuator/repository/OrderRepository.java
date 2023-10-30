@@ -1,19 +1,17 @@
 package com.poc.actuator.repository;
 
 import com.poc.actuator.repository.entity.OrderEntity;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
 
-import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
-public interface OrderRepository extends MongoRepository<OrderEntity, String> {
+public interface OrderRepository extends MongoRepository<OrderEntity, ObjectId> {
 
-    boolean existsByValue(BigDecimal value);
+    List<OrderEntity> findByRecipientNameContaining(String name);
 
-    @Query("{'date': {'$gte': ISODate('?0')}}")
-    List<OrderEntity> findAllByDate(String today);
+    Optional<OrderEntity> findByRecipientNameAndEffected(String name, boolean status);
+
     List<OrderEntity> findAllByDateContainingAndEffected(String today, boolean isEffective);
-
-    List<OrderEntity> findAllByRecipientNameContains(String name);
 }
